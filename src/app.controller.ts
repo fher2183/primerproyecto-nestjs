@@ -7,8 +7,9 @@ import { ApiTags, ApiOperation } from '@nestjs/swagger';
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
+  // Genera un saludo personalizado con el nombre y apellido proporcionados
   @Get()
-  @ApiOperation({ summary: 'Mostrar saludo con nombre y apellido' })
+  @ApiOperation({ summary: 'Mostrar saludo con nombre y apellido(test)' })
   getHello(@Query('nombre') nombre: string, @Query('apellido') apellido: string): string {
     const result = this.appService.getHello(nombre, apellido);
     console.log(result);
