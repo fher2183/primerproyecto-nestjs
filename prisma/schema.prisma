@@ -8,6 +8,27 @@ datasource db {
   relationMode = "prisma"
 }
 
+model person {
+  id               Int       @id @default(autoincrement())
+  dpi              String    @unique @db.VarChar(13)
+  nit              String?   @unique @db.VarChar(15)
+  nombre1          String    @db.VarChar(50)
+  nombre2          String?   @db.VarChar(50)
+  apellido1        String    @db.VarChar(50)
+  apellido2        String?   @db.VarChar(50)
+  fecha_nacimiento DateTime? @db.Date
+  genero           String?   @db.Char(1)
+  estado_civil     String?   @db.VarChar(20)
+  telefono         String?   @db.VarChar(20)
+  celular          String?   @db.VarChar(20)
+  email            String?   @db.VarChar(100)
+  direccion        String?   @db.Text
+  municipio        String?   @db.VarChar(50)
+  departamento     String?   @db.VarChar(50)
+  pais             String    @default("Guatemala") @db.VarChar(50)
+  fecha_registro   DateTime  @default(now()) @db.Timestamp(0)
+}
+
 model rol {
   id          Int        @id @default(autoincrement())
   nombre      String     @unique(map: "nombre") @db.VarChar(50)

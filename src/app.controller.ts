@@ -2,8 +2,8 @@ import { Controller, Get, Query } from '@nestjs/common';
 import { AppService } from './app.service';
 import { ApiTags, ApiOperation } from '@nestjs/swagger';
 
-@ApiTags('Hello') // Nombre del grupo en Swagger
-@Controller('hello')
+@ApiTags('HI') // Nombre del grupo en Swagger
+@Controller('hi')
 export class AppController {
   constructor(private readonly appService: AppService) { }
 
